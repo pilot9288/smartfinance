@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SmartFinance – Credit Repair Pro</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f2f4f8;
+      color: #333;
+      text-align: center;
+    }
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px 20px;
+    }
+    .hero img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+    }
+    h1 {
+      font-size: 2.5em;
+      color: #0a3d62;
+      margin: 20px 0 10px;
+    }
+    p {
+      font-size: 1.2em;
+      color: #444;
+      max-width: 600px;
+      margin: 0 auto 30px;
+    }
+    .btn {
+      display: inline-block;
+      background-color: #90ee90;
+      color: white;
+      padding: 16px 36px;
+      font-size: 1.2em;
+      text-decoration: none;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      transition: all 0.3s ease-in-out;
+    }
+    .btn:hover {
+      background-color: #7fd87f;
+      transform: translateY(-2px);
+    }
+    .offer-text {
+      display: block;
+      font-weight: bold;
+    }
+    .highlight {
+      color: #ffc107;
+      background-color: #dc3545;
+      padding: 4px 8px;
+      border-radius: 4px;
+      margin-top: 6px;
+      display: inline-block;
+      font-size: 0.95em;
+      animation: glow 1.2s ease-in-out infinite alternate;
+    }
+    s.old-price {
+      color: #dc3545;
+      opacity: 1;
+      font-weight: bold;
+    }
+    @keyframes glow {
+      from { box-shadow: 0 0 6px #dc3545; }
+      to { box-shadow: 0 0 12px #ffc107; }
+    }
+    #countdown {
+      font-size: 1em;
+      color: #b30000;
+      margin-top: 12px;
+    }
+    footer {
+      margin-top: 50px;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <img id="hero-img" src="CreditRepairPro.png" alt="Credit Repair Pro Hero Image">
+    <h1 id="main-title">Credit Repair Pro Toolkit</h1>
+    <p id="main-desc">Repair your credit like a pro with our advanced dispute templates, expert guides, and action plan that delivers results fast.</p>
+    <a class="btn" href="mailto:admin@microicom.com">
+      <span style="font-size: 1.2em;">
+        <s class="old-price">$399</s>
+        <strong style="color: #fff; margin-left: 8px;">$149</strong>
+      </span>
+      <span class="highlight">for a limited time</span>
+    </a>
+    <div id="countdown"></div>
+  </div>
+
+  <footer>
+    &copy; 2025 SmartFinance · <a href="https://www.microicom.com" style="color: #0a3d62;">www.microicom.com</a>
+  </footer>
+
+  <script>
+    const countdownEl = document.getElementById('countdown');
+    const endTime = new Date();
+    endTime.setHours(endTime.getHours() + 72);
+
+    function updateCountdown() {
+      const now = new Date();
+      const timeLeft = endTime - now;
+
+      if (timeLeft <= 0) {
+        countdownEl.textContent = 'Offer expired.';
+        return;
+      }
+
+      const hours = Math.floor((timeLeft / (1000 * 60 * 60)) % 72);
+      const minutes = Math.floor((timeLeft / (1000 * 60)) % 60);
+      const seconds = Math.floor((timeLeft / 1000) % 60);
+
+      countdownEl.textContent = `⏳ Offer ends in ${hours}h ${minutes}m ${seconds}s`;
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+</body>
+</html>
